@@ -1,11 +1,13 @@
 # ADS1115_IDF
 
-ADS1115 library for the espressif IDF environment. 
+### ADS1115 library for the espressif IDF environment. 
 
-Library handles the I2C communication (however must be pre-configured) *no semaphores are used, so these will need to be added manually if needed.
+* Conversion state can be checked.
 
-Most functions return esp_err_t for logging and error detection.
+* Library handles the I2C communication (however must be pre-configured) *no semaphores are used, so these will need to be added manually if needed.
 
-See main.c for a basic example (and others when/if added) for implimentation and header file for notable comments.
+* Most functions return esp_err_t for logging and error detection.
 
-Please request changes if needed.
+! See main.c for a basic example (and others when/if added) for implimentation and header file for notable comments.
+
+! Please request changes if needed.
