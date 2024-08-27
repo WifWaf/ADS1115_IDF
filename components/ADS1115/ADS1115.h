@@ -10,7 +10,7 @@
 #define ADS1115_DEBUG_LEVEL ESP_LOG_DEBUG
 
 /* Device Address -------------------------------- */
-#define ADS1115_DEF_DEV_ADR 0b1001000 >> 1 // 0x48 
+#define ADS1115_DEF_DEV_ADR 0b1001000 >> 1 // 0x48
 
 /* Address Pointer Register ---------------------- */
 #define ADS1115_REG_CONV                  0x00
@@ -29,20 +29,20 @@
 
 // inline functions pass these defintions, so are shifted instead of an uint16 argument
 #define ADS1115_CFG_MS_MUX_DIFF_AIN0_AIN1 0x00    // default
-#define ADS1115_CFG_MS_MUX_DIFF_AIN0_AIN3 0x10 
-#define ADS1115_CFG_MS_MUX_DIFF_AIN1_AIN3 0x20  
-#define ADS1115_CFG_MS_MUX_DIFF_AIN2_AIN3 0x30  
-#define ADS1115_CFG_MS_MUX_SNGL_AIN0_GND  0x40  
-#define ADS1115_CFG_MS_MUX_SNGL_AIN1_GND  0x50  
-#define ADS1115_CFG_MS_MUX_SNGL_AIN2_GND  0x60  
-#define ADS1115_CFG_MS_MUX_SNGL_AIN3_GND  0x70 
+#define ADS1115_CFG_MS_MUX_DIFF_AIN0_AIN3 0x10
+#define ADS1115_CFG_MS_MUX_DIFF_AIN1_AIN3 0x20
+#define ADS1115_CFG_MS_MUX_DIFF_AIN2_AIN3 0x30
+#define ADS1115_CFG_MS_MUX_SNGL_AIN0_GND  0x40
+#define ADS1115_CFG_MS_MUX_SNGL_AIN1_GND  0x50
+#define ADS1115_CFG_MS_MUX_SNGL_AIN2_GND  0x60
+#define ADS1115_CFG_MS_MUX_SNGL_AIN3_GND  0x70
 
 #define ADS1115_CFG_MS_PGA_FSR_6_144V     0x0000   // only expresses full-scale range of ADC scaling. Do not apply more than VDD + 0.3 V to the analog inputs
 #define ADS1115_CFG_MS_PGA_FSR_4_096V     0x0200   // only expresses full-scale range of ADC scaling. Do not apply more than VDD + 0.3 V to the analog inputs
 #define ADS1115_CFG_MS_PGA_FSR_2_048V     0x0600   // default
-#define ADS1115_CFG_MS_PGA_FSR_1_024V     0x0800  
-#define ADS1115_CFG_MS_PGA_FSR_0_512V     0x0C00 
-#define ADS1115_CFG_MS_PGA_FSR_0_256V     0x0E00  
+#define ADS1115_CFG_MS_PGA_FSR_1_024V     0x0800
+#define ADS1115_CFG_MS_PGA_FSR_0_512V     0x0C00
+#define ADS1115_CFG_MS_PGA_FSR_0_256V     0x0E00
 #define ADS1115_CFG_MS_MODE_CON           0x0000
 #define ADS1115_CFG_MS_MODE_SS            0x0100
 
@@ -71,9 +71,11 @@
 
 #define BYTES_INT(A,B) (((A << 8) & 0xFF00) | B)
 
+#define ADS_RW_BUFF_SIZE 2
+
 typedef struct {
    uint16_t reg_cfg;
-   uint8_t rw_buff[2];
+   uint8_t rw_buff[ADS_RW_BUFF_SIZE];
    uint8_t dev_addr;
 } ads1115_t;
 
